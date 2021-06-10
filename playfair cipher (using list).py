@@ -1,55 +1,13 @@
-# a = 97
-# x = input()
-# for char in x:
-#     print(ord(char))
+letters = list('abcdefghiklmnopqrstuvwxyz')
+key = list('monarchy')
+plaintext = list('baaaoon')
 
-# x = " "
-# print(x.isupper())
-# print(ord(x))
+for letter in key:
+    letters.remove(letter)
 
-# a = -62 % 26
-# print(a)
-# a += 97
-# print(a)
-# print(chr(a))
+key.extend(letters)
 
-# string = "hello"
-# # print(list(string))
-# string = list(string)
-# print(string)
-
-# key_keys = "abcdefghijklmnopqrstuvwxyz"
-# key_values = "qwertyuiopasdfghjklzxcvbnm"
-# key_keys = list(key_keys)
-# key_values = list(key_values)
-
-# # encryption_dict = {key_keys[i] : key_values[i] for i in range(len(key_keys))}
-# encryption_dict = dict (zip(key_keys, key_values))
-# print(encryption_dict.get('a'))
-
-# x = ' '
-# x = x.lower()
-# print(x, "asf")
-
-# x = 'abcd'
-# s = x.find('c')
-# print(s)
-
-# letters = list('abcdefghiklmnopqrstuvwxyz')
-
-# letter = 'h'
-# # print(letters.index(letter))
-# temp = letters.index(letter)
-# remainder = temp % 5
-# div = temp // 5
-# print(div, remainder)
-
-
-key = ['m', 'o', 'n', 'a', 'r', 'c', 'h', 'y', 'b', 'd', 'e', 'f',
-       'g', 'i', 'k', 'l', 'p', 'q', 's', 't', 'u', 'v', 'w', 'x', 'z']
-plaintext = list('help')
-
-if(len(plaintext)%2!=0):
+if(len(plaintext) % 2 != 0):
     plaintext.append('z')
 
 index_first = []
@@ -57,9 +15,12 @@ index_second = []
 for i in range(len(plaintext)):
     if(i % 2 == 0):
         index_first.append(key.index(plaintext[i]))
-
     else:
         index_second.append(key.index(plaintext[i]))
+
+# for i in range(len(index_first)):
+#     if(index_first[i]==index_second[i]):
+#         pass       
 
 print(index_first)
 print(index_second)
