@@ -1,12 +1,15 @@
 def encrypt(plaintext, key):
     ciphertext = ""
     for character in plaintext:
+        # ignore spaces
         if(character == " "):
-            ciphertext+= character
+            ciphertext += character
+        # if character is uppercase
         elif (character.isupper()):
             ciphertext += chr((ord(character) + key - 65) % 26 + 65)
+        # if character is lowercase
         else:
-            ciphertext = ciphertext + chr((ord(character) + key - 97) % 26 + 97)
+            ciphertext += chr((ord(character) + key - 97) % 26 + 97)
     return ciphertext
 
 
@@ -14,7 +17,7 @@ def decrypt(ciphertext, key):
     plaintext = ""
     for character in ciphertext:
         if(character == " "):
-            plaintext+= character
+            plaintext += character
         elif (character.isupper()):
             plaintext += chr((ord(character) - key - 65) % 26 + 65)
         else:
@@ -22,14 +25,10 @@ def decrypt(ciphertext, key):
     return plaintext
 
 
-# inputtext = input("Enter text: ")
+inputtext = input("Enter text: ")
 key = int(input("Enter key: "))
-choice = int(input("Choice:\n Encrypt(1)\tDecrypt(2)\n"))
-n =10
+choice = int(input("Choice:\nEncrypt(1)\tDecrypt(2)\n"))
 if(choice == 1):
-    while(n!=0):
-        inputtext = input("Enter text: ")
-        print(encrypt(inputtext, key))
+    print(encrypt(inputtext, key))
 else:
-    # print(decrypt(inputtext, key))
-    pass
+    print(decrypt(inputtext, key))
