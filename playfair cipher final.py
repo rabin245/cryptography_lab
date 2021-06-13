@@ -1,5 +1,3 @@
-# x = [chr(i) for i in range(97,123)]
-
 key = input("Enter key:")
 key = key.replace(' ', '')
 key = key.replace('j', 'i')
