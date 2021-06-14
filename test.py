@@ -125,5 +125,115 @@
 
 # print(msg)
 
-s = -1
-print(s%2)
+# s = -1
+# print(s%2)
+# key = 'heerr'
+# print((int(pow(len(key),0.5) + 0.5))**2)
+# if(int(pow(len(key),0.5)) + 0.5) ** 2 == len(key)):
+#     pass
+# x=4
+# print(x**0.5)
+
+# A = [[1,20,3],[1,2,3],[1,2,3]]
+# # A = [A[i]%5 for i in range(len(A))]
+# # print(A)
+# B = A
+# i=1
+# B = B[:i]+B[i+1:]
+# print(B)
+# def minor(array,i,j):
+#     c = array
+#     c = c[:i] + c[i+1:]
+#     for k in range(0,len(c)):
+#         c[k] = c[k][:j]+c[k][j+1:]
+#     return c
+# def det(array,n):
+#     if n == 1 :return array[0][0]
+#     if n == 2 :return array[0][0]*array[1][1] - array[0][1]*array[1][0]
+#     sum = 0
+#     for i in range(0,n):
+#         m = minor(array,0,i)
+#         sum =sum + ((-1)**i)*array[0][i] * det(m,n-1)
+#     return sum
+# def multip(X, Y):
+#     return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+# B = [[1,2,3],[4,5,2],[1,4,3]]
+# A = [[1,2,3]]
+# C=[1,2,3]
+# # print(multip(A,B))
+# print(list(zip(*B)))
+# print(list(zip(C,B)))
+
+# def transpose(matrix):
+#     return [[row[i] for row in matrix] for i in range(len(matrix))]
+
+# A = [[1,2,3],[4,5,2],[1,4,3]]
+# # print(transpose(B))
+# # A = [[row[i]*10 for row in A] for i in range(len(A))]
+# A = [[item*10 for item in row] for row in A ]
+# print(A)
+
+# x = 3
+# y = 1
+# while(True):
+#     if (x*y)%26==1 :
+#         break
+#     else:
+#         y+=1
+
+# print(y)
+
+# x =dict()
+# x = {chr(i):((i-97)%26) for i in range(97,123)}
+# print(x)
+
+# def getMinorMatrix(matrix, i, j):
+#     z = matrix
+#     z = z[:i] + z[i+1:]  # remove ith(0th) row
+#     # remove jth column
+#     for k in range(len(z)):
+#         z[k] = z[k][:j]+z[k][j+1:]
+#     return z
+
+
+# def det(matrix, n):
+#     if n == 2:
+#         return matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0]
+#     sum = 0
+#     for col in range(n):
+#         m = getMinorMatrix(matrix, 0, col)
+#         sum = sum + ((-1)**col)*matrix[0][col] * det(m, n-1)
+#     return sum
+
+# A = [[2,8,15],[7,4,17],[8,13,16]]
+# B = [[4,17],[13,16]]
+# c=[[7,17],[8,16]]
+# d=[[7,4],[8,13]]
+# e=[[8,15],[13,16]]
+
+# k = [[-157,67,76],[24,-88,71],[59,38,-48]]
+
+# k = [[3*item for item in row] for row in k]
+
+# k = [[item%26 for item in row] for row in k]
+
+# x = [76 ,209, 350]
+# x = [item%26 for item in x]
+# print(k)
+
+# result = [824, 598, 629]
+# result = [item%26 for item in result]
+# print(result)
+
+sqr_key = 3
+
+plain_text = 'suss'
+while len(plain_text)%sqr_key!=0:
+    plain_text += 'x'
+
+print(plain_text)
+for x in range(0, len(plain_text), sqr_key):
+    plain_text1=[]
+    plain_text1=plain_text[x:x+sqr_key]
+    print(plain_text1)
+
