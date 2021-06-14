@@ -3,6 +3,7 @@ key_values = "qwertyuiopasdfghjklzxcvbnm"
 key_keys = list(key_keys)
 key_values = list(key_values)
 # encryption_dict = {key_keys[i] : key_values[i] for i in range(len(key_keys))}
+# creating dictionaries/maps for both encryption and decryption
 encryption_dict = dict(zip(key_keys, key_values))
 decryption_dict = dict(zip(key_values, key_keys))
 
@@ -11,7 +12,7 @@ def encrypt(plaintext):
     ciphertext = ""
     for char in plaintext:
         if(char.isupper()):
-            char = char.lower()
+            char = char.lower() # if upper, convert to lower first then convert back to upper later after encryption
             ciphertext += (encryption_dict.get(char, char)).upper()
         else:
             ciphertext += encryption_dict.get(char, char)
