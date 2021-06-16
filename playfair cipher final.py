@@ -35,49 +35,11 @@ def return_index(letter):
                 index.append(j)
                 return index
 
-
 def encrypt():
     plain_text = str(input("Enter plaintext:"))
     plain_text = plain_text.lower()
     plain_text = plain_text.replace(" ", "")
-
-    cipher_text = list()
-
-    for pos in range(0, len(plain_text), 2):
-        if pos < len(plain_text)-1:
-            # if two letters are same add x in between them
-            if plain_text[pos] == plain_text[pos+1]:
-                plain_text = plain_text[:pos+1]+'x'+plain_text[pos+1:]
-    # if the final length of plaintext is odd, make it even
-    if len(plain_text) % 2 != 0:
-        plain_text = plain_text[:]+'x'
-
-    for i in range(0, len(plain_text), 2):
-        first_index = list()  # index of first letter of a pair in the table
-        second_index = list()  # index of second letter of a pair in the table
-        first_index = return_index(plain_text[i])
-        second_index = return_index(plain_text[i+1])
-
-        # if the letters are in the same column
-        if (first_index[1] == second_index[1]):
-            cipher_text.append(table[(first_index[0]+1) % 5][first_index[1]])
-            cipher_text.append(table[(second_index[0]+1) % 5][second_index[1]])
-        # if the letters are in the same row
-        elif (first_index[0] == second_index[0]):
-            cipher_text.append(table[first_index[0]][(first_index[1]+1) % 5])
-            cipher_text.append(table[second_index[0]][(second_index[1]+1) % 5])
-        # if the letters are in different row and column
-        else:
-            cipher_text.append(table[first_index[0]][second_index[1]])
-            cipher_text.append(table[second_index[0]][first_index[1]])
-    # print(cipher_text)
-    print(''.join(cipher_text))
-
-
-def encrypt():
-    plain_text = str(input("Enter plaintext:"))
-    plain_text = plain_text.lower()
-    plain_text = plain_text.replace(" ", "")
+    plain_text = plain_text.replace('j','i')
 
     cipher_text = list()
 
@@ -113,7 +75,7 @@ def encrypt():
 
 
 def decrypt():
-    cipher_text = str(input("Enter plaintext:"))
+    cipher_text = str(input("Enter ciphertext:"))
     cipher_text = cipher_text.lower()
     cipher_text = cipher_text.replace(" ", "")
 

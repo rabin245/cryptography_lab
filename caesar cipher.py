@@ -1,12 +1,12 @@
 def encrypt(plaintext, key):
     ciphertext = ""
-    for character in plaintext:
+    for character in plaintext:   
         # ignore spaces
         if(character == " "):
             ciphertext += character
         # if character is uppercase
         elif (character.isupper()):
-            ciphertext += chr((ord(character) + key - 65) % 26 + 65)
+            ciphertext += chr((ord(character) - 65 + key) % 26 + 65)
         # if character is lowercase
         else:
             ciphertext += chr((ord(character) + key - 97) % 26 + 97)

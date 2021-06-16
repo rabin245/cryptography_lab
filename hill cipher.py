@@ -1,6 +1,6 @@
 valid = False
 while not valid:
-    key = input("Enter key (of length equals to a square number):")
+    key = input("Enter key:")
     key = key.replace(' ', '')
     key = key.lower()
     valid = True
