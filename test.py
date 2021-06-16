@@ -225,15 +225,28 @@
 # result = [item%26 for item in result]
 # print(result)
 
-sqr_key = 3
+# sqr_key = 3
 
-plain_text = 'suss'
-while len(plain_text)%sqr_key!=0:
-    plain_text += 'x'
+# plain_text = 'suss'
+# while len(plain_text)%sqr_key!=0:
+#     plain_text += 'x'
 
-print(plain_text)
-for x in range(0, len(plain_text), sqr_key):
-    plain_text1=[]
-    plain_text1=plain_text[x:x+sqr_key]
-    print(plain_text1)
+# print(plain_text)
+# for x in range(0, len(plain_text), sqr_key):
+#     plain_text1=[]
+#     plain_text1=plain_text[x:x+sqr_key]
+#     print(plain_text1)
 
+
+# c = 'balz'
+# k=3
+# for char in c:
+#     plain_ascii = ord(char)
+#     plain_range = ord(char)
+
+key = 'monarchy'
+myset=set()
+for i in range(len(key)):
+    myset.add(key[i])
+print(myset)
+print(list(myset))
