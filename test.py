@@ -47,19 +47,19 @@
 
 # key = ['m', 'o', 'n', 'a', 'r', 'c', 'h', 'y', 'b', 'd', 'e', 'f',
 #        'g', 'i', 'k', 'l', 'p', 'q', 's', 't', 'u', 'v', 'w', 'x', 'z']
-# plaintext = list('help')
+# ciphertext = list('help')
 
-# if(len(plaintext)%2!=0):
-#     plaintext.append('z')
+# if(len(ciphertext)%2!=0):
+#     ciphertext.append('z')
 
 # index_first = []
 # index_second = []
-# for i in range(len(plaintext)):
+# for i in range(len(ciphertext)):
 #     if(i % 2 == 0):
-#         index_first.append(key.index(plaintext[i]))
+#         index_first.append(key.index(ciphertext[i]))
 
 #     else:
-#         index_second.append(key.index(plaintext[i]))
+#         index_second.append(key.index(ciphertext[i]))
 
 # print(index_first)
 # print(index_second)
@@ -92,7 +92,7 @@
 # for x in cipher:
 #     ciphertext.append(key[x])
 # print(ciphertext)
-# print(''.join(plaintext))
+# print(''.join(ciphertext))
 # print(''.join(ciphertext))
 
 # matrix = [[1, 2, 3],
@@ -244,9 +244,56 @@
 #     plain_ascii = ord(char)
 #     plain_range = ord(char)
 
-key = 'monarchy'
-myset=set()
-for i in range(len(key)):
-    myset.add(key[i])
-print(myset)
-print(list(myset))
+# key = 'monarchy'
+# myset=set()
+# for i in range(len(key)):
+#     myset.add(key[i])
+# print(myset)
+# print(list(myset))
+
+# key = 'dece'
+# result = list()
+# result.extend(key)
+# print(result)
+
+# length = 18
+
+# while not reached:
+# current_letter = (ciphertext[i]-key[i])%26
+# key.append(current_letter)
+#   print(current_letter)
+#     for char in key:
+#         result.append(char)
+#         if(len(result)==length):
+#             print('reached')
+#             reached = True
+#             break
+
+# print(result)
+
+# key = 'abz'
+# key = [(ord(char)-97) for char in key]
+# print(key)
+
+# lst = {chr(i):i-97 for i in range(97,123)}
+# print(lst)
+
+# import random
+# x = random.randint(0,3)
+# print(x)
+
+key = 'ab'
+ciphertext = 'hfspz'
+key = [ord(i)-97 for i in key]
+ciphertext = [ord(i)-97 for i in ciphertext]
+plaintext = []
+for i in range(len(ciphertext)):
+    current_letter = (ciphertext[i]-key[i]) % 26
+
+    if len(key) < len(ciphertext):
+        key.append(current_letter)
+    print(current_letter)
+    plaintext.append(chr(current_letter+97))
+
+print(key)
+print(plaintext)
