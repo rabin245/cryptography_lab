@@ -282,18 +282,80 @@
 # x = random.randint(0,3)
 # print(x)
 
-key = 'ab'
-ciphertext = 'hfspz'
-key = [ord(i)-97 for i in key]
-ciphertext = [ord(i)-97 for i in ciphertext]
-plaintext = []
-for i in range(len(ciphertext)):
-    current_letter = (ciphertext[i]-key[i]) % 26
+# key = 'ab'
+# ciphertext = 'hfspz'
+# key = [ord(i)-97 for i in key]
+# ciphertext = [ord(i)-97 for i in ciphertext]
+# plaintext = []
+# for i in range(len(ciphertext)):
+#     current_letter = (ciphertext[i]-key[i]) % 26
 
-    if len(key) < len(ciphertext):
-        key.append(current_letter)
-    print(current_letter)
-    plaintext.append(chr(current_letter+97))
+#     if len(key) < len(ciphertext):
+#         key.append(current_letter)
+#     print(current_letter)
+#     plaintext.append(chr(current_letter+97))
 
-print(key)
-print(plaintext)
+# print(key)
+# print(plaintext)
+# k = 3
+# x = list('string')
+
+# x = [x[i:i+k] for i in range(0, len(x),k)]
+# print(x)
+# x= list('appleballcat')
+# y = list('hello')
+# z = list()
+# z.extend(x)
+# z.extend(y)
+# print(x, y, z)
+
+x = [4,3,1,2,5,6,7]
+x = [(chr(i+97)) for i in x]
+print(''.join(x))
+# d = [1,2,3,4,5,6,7,8]
+# a = [1,3,5,7]
+# b = [2,4,6,8]
+# c = [[] for i in range(2)]
+# for i in range(0,len(d),2):
+#     c[0].append(d[i])
+#     c[1].append(d[i+1])
+# c = [i for row in c for i in row]
+# print(c)
+
+# p=list('hello')
+# k = 3
+# d=False
+# row = 0
+# c = list()
+# for i in range(k):
+#     c.append([])
+
+# for x in p:
+#     if row == 0 or row == k-1:
+#         d= not d
+#     c[row].append(x)
+#     if d:
+#         row+=1
+#     else: 
+#         row-=1
+
+# print(c)
+# text = 'abcde'
+# key = 3
+# rail = [['\n' for i in range(len(text))]
+#                   for j in range(key)]
+# print(rail)
+# temp = [['' for i in range(len(text))] for j in range(key) ]
+# print(temp)
+# temp1 = list()
+# for j in range(key):
+#     for i in range(len(text)):
+#         temp1.append('x')
+# print(temp1)
+
+# temp = [['h', 'o', 'c'], ['e', 'l', 'b', 't', 'h'], ['l', 'i']]
+
+# dir_down = True
+# i = 0
+
+# for row in 
