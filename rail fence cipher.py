@@ -6,14 +6,18 @@ def encrypt():
 
     rails = int(input('Enter number of rails:'))
     ciphertext = list()
+    # create a nested list with rows equal to number of rails
     for i in range(rails):
         ciphertext.append([])
-    dir_down = False
+        
+    dir_down = False  # bool variable to check what the direction is
     row = 0
 
     for letter in plaintext:
+        # if the current pointer is either at the top or bottom rail, flip the direction
         if row == 0 or row == rails-1:
             dir_down = not dir_down
+        
         ciphertext[row].append(letter)
 
         if dir_down:
@@ -35,6 +39,7 @@ def decrypt():
     plaintext = list()
 
     temp = list()
+    # making an array with 'rails' rows and column equal to len(ciphertext)
     temp = [['' for i in range(len(ciphertext))] for j in range(rails)]
 
     dir_down = False
@@ -43,6 +48,7 @@ def decrypt():
     for letter in ciphertext:
         if row == 0 or row == rails-1:
             dir_down = not dir_down
+        # assigning '*' to the place values where the plaintext letters would go in
         temp[row][col] = '*'
         col += 1
         if dir_down:
@@ -51,12 +57,14 @@ def decrypt():
             row -= 1
 
     count = 0
+    # using the previous '*' to assign letters in their respective positions
     for row in range(len(temp)):
         for i in range(len(ciphertext)):
             if(temp[row][i] == '*'):
                 temp[row][i] = ciphertext[count]
                 count += 1
 
+    # traversing the array like before and appending the letters to plaintext
     dir_down = False
     row, col = 0, 0
 
